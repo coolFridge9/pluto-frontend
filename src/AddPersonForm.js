@@ -12,14 +12,18 @@ export default class AddPersonForm extends Component{
             slackHandle: undefined
         }
     }
-    componentWillUnmount(){
-            axios.post("http://localhost:5000/",this.state);
-        };
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         });
         };
+    onClickSubmit = () => {
+        axios.post("http://localhost:5000/",this.state);
+        this.props.openForm(false);
+    };
+    onClickBack = () => {
+      this.props.openForm(false);
+    };
     render(){
         return(
             <div>
@@ -39,6 +43,17 @@ export default class AddPersonForm extends Component{
                     slack handle: <input name="slackHandle" type="text" onChange={this.handleChange}/><br></br>
                 </label>
             </form>
+                &nbsp;
+                <div>
+                    <button type="button" onClick={this.onClickSubmit}>
+                        submit
+                    </button>
+                    &nbsp;
+                    &nbsp;
+                    <button type="button" onClick={this.onClickBack}>
+                        back
+                    </button>
+                </div>
             </div>
         )
     }

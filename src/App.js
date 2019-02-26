@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import TableComponent from "./TableComponent";
+import ProtegesView from "./ProtegesView";
 import AddPersonForm from "./AddPersonForm";
 import axios from "axios";
 
@@ -8,36 +8,36 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: {},
-      isLoading: true,
+      // data: {},
+      //isLoading: true,
       addPersonForm: false,
-      button : "add someone"
+      // button : "add someone"
     };
   }
 
-  componentDidMount() {
-    this.timerID = setInterval(() => axios.get("http://localhost:5000/").then(response => {
-      this.setState({
-        data: response.data,
-        isLoading: false
-      });
-    }),1000
-  )}
-  componentWillUnmount(){
-    clearInterval(this.timerID);
-  }
+  // componentDidMount() {
+  //   this.timerID = setInterval(() => axios.get("http://localhost:5000/").then(response => {
+  //     this.setState({
+  //       data: response.data,
+  //       isLoading: false
+  //     });
+  //   }),1000
+  // )}
+  // componentWillUnmount(){
+  //   clearInterval(this.timerID);
+  // }
 
-  onClickAddPerson = () => {
-    this.setState({ addPersonForm: true, button : "submit" });
+  onClickSwitchViewer = (formVisible) => {
+    this.setState({ addPersonForm: formVisible});
   };
-  onClickFormSubmit = () => {
-    this.setState({ addPersonForm: false, button : "add someone" });
-  };
+  // onClickFormSubmit = () => {
+  //   this.setState({ addPersonForm: false, button : "add someone" });
+  // };
 
-buttonMapping = {
-  "add someone" : this.onClickAddPerson,
-    "submit" : this.onClickFormSubmit
-};
+// buttonMapping = {
+//   "add someone" : this.onClickSwitchViewer,
+//     "submit" : this.onClickFormSubmit
+// };
 
 
   render() {
@@ -45,15 +45,14 @@ buttonMapping = {
           <header className="App-header">
               <div>
                   {
-                    this.state.isLoading ? "LOADING..."
-                  : this.state.addPersonForm ? <AddPersonForm/>
-                  : <TableComponent tableContent={this.state.data}/>
+                  this.state.addPersonForm ? <AddPersonForm openForm={this.onClickSwitchViewer}/>
+                   : <ProtegesView addPerson={this.onClickSwitchViewer}/>
                   }
               </div>
-              &nbsp;
-              <button type="button" onClick={this.buttonMapping[this.state.button]}>
-                  {this.state.button}
-              </button>
+              {/*&nbsp;*/}
+              {/*<button type="button" onClick={this.buttonMapping[this.state.button]}>*/}
+                  {/*{this.state.button}*/}
+              {/*</button>*/}
           </header>
       </div>;
   }

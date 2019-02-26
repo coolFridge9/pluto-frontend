@@ -12,3 +12,14 @@ th{
     border-bottom: 1px solid white;
     color: white;
 }
+
+button {
+    border: 2px solid white;
+    background-color: #282c34;
+    color: white;
+    padding :13px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor:pointer;
+    box-shadow: 3px 3px #888888;
+}
