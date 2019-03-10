@@ -19,8 +19,8 @@ export default class extends Component {
                     <td>{row._email}</td>
                     <td>{row._slackHandle}</td>
                     <td>
-                        {<button name={row._slackHandle} type="button" onClick={this.deleteProtege}>
-                            delete protege
+                        {<button name={row._id} type="button" onClick={this.deleteProtege}>
+                            Edit protege
                         </button>}
                     </td>
                 </tr>

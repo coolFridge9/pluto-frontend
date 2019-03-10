@@ -18,8 +18,7 @@ export default class AddPersonForm extends Component{
         });
         };
     onClickSubmit = () => {
-        axios.post("http://localhost:5000/",this.state);
-        this.props.openForm(false);
+        this.props.submitMethod(this.state);
     };
     onClickBack = () => {
       this.props.openForm(false);
@@ -27,7 +26,7 @@ export default class AddPersonForm extends Component{
     render(){
         return(
             <div>
-            <h2>Add a new person to db</h2>
+            <h2>{this.props.title}</h2>
 
             <form>
                 <label>
