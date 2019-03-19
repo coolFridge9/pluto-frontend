@@ -32,7 +32,7 @@ export default class ProtegesView extends Component {
                 <h2>List of Proteges</h2>
             </div>
             {this.state.isLoading ? "LOADING TABLE..."
-            : <Table tableContent={this.state.tableContent}/>}
+            : <Table tableContent={this.state.tableContent} isEditMode={this.props.formType} openForm={this.props.addPerson}/>}
             &nbsp;
             <div>
                 <button type="button" onClick={this.onClickAddProtege}>

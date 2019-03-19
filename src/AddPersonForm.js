@@ -52,6 +52,9 @@ export default class AddPersonForm extends Component{
                     <button type="button" onClick={this.onClickBack}>
                         back
                     </button>
+                    <div>
+
+                    </div>
                 </div>
             </div>
         )

@@ -2,7 +2,9 @@ import React, {Component} from "react";
 import axios from "axios";
 export default class extends Component {
     deleteProtege = (event) =>{
-        axios.delete("http://localhost:5000/", {data : event.target.name});
+        //axios.delete("http://localhost:5000/", {data : event.target.name});
+        this.props.isEditMode(true);
+        this.props.openForm(true);
     };
     render() {
         return (<table>

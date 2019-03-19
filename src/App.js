@@ -8,24 +8,43 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      addPersonForm: false,
+      form: false,
     };
   }
-  onClickSwitchViewer = (formVisible) => {
-    this.setState({ addPersonForm: formVisible});
+
+
+    onClickSwitchViewer = (formVisible) => {
+    this.setState({ form: formVisible});
   };
 
-  onClickSubmit = (postData) => {
+  onClickSubmitAdd = (postData) => {
       axios.post("http://localhost:5000/",postData);
-      this.setState({ addPersonForm: false});
+      this.setState({ form: false});
     };
-  render() {
+  onClickSubmitEdit = (postData) => {
+      axios.put("http://localhost:5000/",postData);
+      this.setState({ form: false});
+
+  };
+    addPersonFormData = {title :"Add New Protege",  submitMethod: this.onClickSubmitAdd, showDelete: false};
+    onClickSwitchForm = (editMode=false) => {
+        if(editMode){
+            this.addPersonFormData = {title : "Edit Protege", submitMethod: this.onClickSubmitEdit, showDelete: true}
+        }
+        else{
+            this.addPersonFormData = {title :"Add New Protege",  submitMethod: this.onClickSubmitAdd, showDelete: false};
+        }
+    };
+
+    render() {
       return <div className="App">
           <header className="App-header">
               <div>
                   {
-                  this.state.addPersonForm ? <AddPersonForm title="Add New Protege" submitMethod={this.onClickSubmit} showDeleteButton={false} openForm={this.onClickSwitchViewer}/>
-                   : <ProtegesView addPerson={this.onClickSwitchViewer}/>
+                  this.state.form ?
+                      <AddPersonForm title={this.addPersonFormData.title}
+                                     submitMethod={this.addPersonFormData.submitMethod} showDeleteButton={this.addPersonFormData.showDelete} openForm={this.onClickSwitchViewer}/>
+                   : <ProtegesView addPerson={this.onClickSwitchViewer} formType={this.onClickSwitchForm}/>
                   }
               </div>
           </header>
