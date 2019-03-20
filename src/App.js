@@ -5,35 +5,29 @@ import AddPersonForm from "./AddPersonForm";
 import axios from "axios/index";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      form: false,
+    state = {
+        viewSelection: "view"
     };
-  }
 
+    switchViewer = (view) =>{
+        this.setState({ viewSelection: view});
+    };
 
-    onClickSwitchViewer = (formVisible) => {
-    this.setState({ form: formVisible});
+    onClickSwitchViewer = (view) => {
+    this.switchViewer(view);
   };
-
   onClickSubmitAdd = (postData) => {
       axios.post("http://localhost:5000/",postData);
-      this.setState({ form: false});
+      this.switchViewer("view");
     };
   onClickSubmitEdit = (postData) => {
       axios.put("http://localhost:5000/",postData);
-      this.setState({ form: false});
-
+      this.switchViewer("view");
   };
-    addPersonFormData = {title :"Add New Protege",  submitMethod: this.onClickSubmitAdd, showDelete: false};
-    onClickSwitchForm = (editMode=false) => {
-        if(editMode){
-            this.addPersonFormData = {title : "Edit Protege", submitMethod: this.onClickSubmitEdit, showDelete: true}
-        }
-        else{
-            this.addPersonFormData = {title :"Add New Protege",  submitMethod: this.onClickSubmitAdd, showDelete: false};
-        }
+    views = {
+        add: <AddPersonForm title="Add New Protege" submitMethod={this.onClickSubmitAdd} showDeleteButton={false} openForm={this.onClickSwitchViewer}/>,
+        edit: <AddPersonForm title="Edit Protege" submitMethod={this.onClickSubmitEdit} showDeleteButton={true} openForm={this.onClickSwitchViewer}/>,
+        view: <ProtegesView view={this.onClickSwitchViewer}/>
     };
 
     render() {
@@ -41,10 +35,7 @@ class App extends Component {
           <header className="App-header">
               <div>
                   {
-                  this.state.form ?
-                      <AddPersonForm title={this.addPersonFormData.title}
-                                     submitMethod={this.addPersonFormData.submitMethod} showDeleteButton={this.addPersonFormData.showDelete} openForm={this.onClickSwitchViewer}/>
-                   : <ProtegesView addPerson={this.onClickSwitchViewer} formType={this.onClickSwitchForm}/>
+                  this.views[this.state.viewSelection]
                   }
               </div>
           </header>

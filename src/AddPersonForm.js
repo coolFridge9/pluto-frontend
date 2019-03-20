@@ -21,7 +21,7 @@ export default class AddPersonForm extends Component{
         this.props.submitMethod(this.state);
     };
     onClickBack = () => {
-      this.props.openForm(false);
+      this.props.openForm("view");
     };
     render(){
         return(
@@ -53,7 +53,8 @@ export default class AddPersonForm extends Component{
                         back
                     </button>
                     <div>
-
+                        <br/>
+                        {this.props.showDeleteButton ? <button>Delete</button> : ""}
                     </div>
                 </div>
             </div>
