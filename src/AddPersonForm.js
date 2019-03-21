@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import DeleteButton from "./DeleteButton"
 import axios from "axios";
 
 export default class AddPersonForm extends Component{
@@ -21,25 +22,24 @@ export default class AddPersonForm extends Component{
         this.props.submitMethod(this.state);
     };
     onClickBack = () => {
-      this.props.openForm("view");
+      this.props.view("view");
     };
     render(){
         return(
             <div>
             <h2>{this.props.title}</h2>
-
             <form>
                 <label>
-                    First Name: <input name="firstName" type="text" onChange={this.handleChange}/><br></br>
+                    First Name: <input name="firstName" type="text" onChange={this.handleChange}/><br/>
                 </label>
                 <label>
-                    Last Name: <input name="lastName" type="text" onChange={this.handleChange}/><br></br>
+                    Last Name: <input name="lastName" type="text" onChange={this.handleChange}/><br/>
                 </label>
                 <label>
-                    email: <input name="email" type="text" onChange={this.handleChange}/><br></br>
+                    email: <input name="email" type="text" onChange={this.handleChange}/><br/>
                 </label>
                 <label>
-                    slack handle: <input name="slackHandle" type="text" onChange={this.handleChange}/><br></br>
+                    slack handle: <input name="slackHandle" type="text" onChange={this.handleChange}/><br/>
                 </label>
             </form>
                 &nbsp;
@@ -54,7 +54,7 @@ export default class AddPersonForm extends Component{
                     </button>
                     <div>
                         <br/>
-                        {this.props.showDeleteButton ? <button>Delete</button> : ""}
+                        {this.props.showDeleteButton ? <DeleteButton id={this.props.protege._id} view={this.props.view}/> : ""}
                     </div>
                 </div>
             </div>

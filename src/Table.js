@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import axios from "axios";
 export default class extends Component {
     editProtege = (row) =>{
-        //axios.delete("http://localhost:5000/", {data : event.target.name});
         this.props.view("edit");
         this.props.getProtegeData(row);
     };
