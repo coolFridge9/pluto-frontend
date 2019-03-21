@@ -32,8 +32,8 @@ class App extends Component {
 
     getViews(key) {
         const views = {
-            add: <AddPersonForm title="Add New Protege" submitMethod={this.onClickSubmitAdd} showDeleteButton={false} view={this.onClickSwitchViewer}/>,
-            edit: <AddPersonForm title="Edit Protege" submitMethod={this.onClickSubmitEdit} showDeleteButton={true} protege={this.state.protegeForEdit} view={this.onClickSwitchViewer}/>,
+            add: <AddPersonForm title="Add New Protege" submitMethod={this.onClickSubmitAdd} view={this.onClickSwitchViewer}/>,
+            edit: <AddPersonForm title="Edit Protege" submitMethod={this.onClickSubmitEdit} protege={this.state.protegeForEdit} view={this.onClickSwitchViewer}/>,
             view: <ProtegesView view={this.onClickSwitchViewer} getProtegeData={this.getEditData}/>
         };
         return views[key]

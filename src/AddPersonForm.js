@@ -54,7 +54,7 @@ export default class AddPersonForm extends Component{
                     </button>
                     <div>
                         <br/>
-                        {this.props.showDeleteButton ? <DeleteButton id={this.props.protege._id} view={this.props.view}/> : ""}
+                        {this.props.protege ? <DeleteButton id={this.props.protege._id} view={this.props.view}/> : ""}
                     </div>
                 </div>
             </div>
