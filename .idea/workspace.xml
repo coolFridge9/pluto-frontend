@@ -29,20 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Table.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Table.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="35" column="91" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
+            <state relative-caret-position="451">
+              <caret line="36" column="126" lean-forward="true" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="126" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -68,14 +59,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPersonForm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddPersonForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AddPersonForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+            <state relative-caret-position="550">
+              <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Table.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Table.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="37" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -108,8 +108,8 @@
         <option value="$PROJECT_DIR$/src/ProtegesView.js" />
         <option value="$PROJECT_DIR$/src/DeleteButton.js" />
         <option value="$PROJECT_DIR$/src/Table.js" />
-        <option value="$PROJECT_DIR$/src/AddPersonForm.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/AddPersonForm.js" />
       </list>
     </option>
   </component>
@@ -207,12 +207,12 @@
       <workItem from="1550088265213" duration="20432000" />
       <workItem from="1550456128201" duration="34070000" />
       <workItem from="1551843133139" duration="11811000" />
-      <workItem from="1552528353842" duration="24753000" />
+      <workItem from="1552528353842" duration="27826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94441000" />
+    <option name="totallyTimeSpent" value="97514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1113" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -418,13 +418,6 @@
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -482,29 +475,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddPersonForm.js">
+    <entry file="file://$PROJECT_DIR$/.eslintrc.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
+        <state relative-caret-position="180">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="36" column="126" lean-forward="true" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="126" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Table.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="60">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/AddPersonForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="35" column="91" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
+        <state relative-caret-position="550">
+          <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
