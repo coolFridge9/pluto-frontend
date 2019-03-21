@@ -8,6 +8,10 @@ class App extends Component {
     state = {
         viewSelection: "view"
     };
+    protegeForEdit={};
+    getEditData = (protegeData) => {
+        this.protegeForEdit = protegeData
+    };
 
     switchViewer = (view) =>{
         this.setState({ viewSelection: view});
@@ -27,7 +31,7 @@ class App extends Component {
     views = {
         add: <AddPersonForm title="Add New Protege" submitMethod={this.onClickSubmitAdd} showDeleteButton={false} openForm={this.onClickSwitchViewer}/>,
         edit: <AddPersonForm title="Edit Protege" submitMethod={this.onClickSubmitEdit} showDeleteButton={true} openForm={this.onClickSwitchViewer}/>,
-        view: <ProtegesView view={this.onClickSwitchViewer}/>
+        view: <ProtegesView view={this.onClickSwitchViewer} getProtegeData={this.getEditData}/>
     };
 
     render() {

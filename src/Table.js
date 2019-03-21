@@ -1,9 +1,10 @@
 import React, {Component} from "react";
 import axios from "axios";
 export default class extends Component {
-    editProtege = (event) =>{
+    editProtege = (row) =>{
         //axios.delete("http://localhost:5000/", {data : event.target.name});
         this.props.view("edit");
+        this.props.getProtegeData(row);
     };
     render() {
         return (<table>
@@ -20,7 +21,7 @@ export default class extends Component {
                     <td>{row._email}</td>
                     <td>{row._slackHandle}</td>
                     <td>
-                        {<button name={row._id} type="button" onClick={this.editProtege}>
+                        {<button name={row._id} type="button" onClick={() => {this.editProtege(row)}}>
                             Edit protege
                         </button>}
                     </td>
