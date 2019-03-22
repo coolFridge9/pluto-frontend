@@ -7,22 +7,19 @@ export default class AddPersonForm extends Component{
         super(props);
         const protege = (this.props.protege === undefined) ? {} : this.props.protege;
         this.state = {
-            submitData:{
-            firstName: undefined,
-            lastName: undefined,
-            preferredName: undefined,
-            email: undefined,
-            slackHandle: undefined
-            },
+            submitData: protege,
             modifiableData: protege
         }
     }
     handleChange = (event) => {
+        console.log(event.target.name, event.target.value);
         this.setState({
             submitData:{ ...this.state.submitData,
                 [event.target.name]: event.target.value
             }
         });
+        console.log(this.state.submitData);
+        this.setState({modifiableData:""})
         };
     onClickSubmit = () => {
         this.props.submitMethod(this.state.submitData);
@@ -36,16 +33,16 @@ export default class AddPersonForm extends Component{
             <h2>{this.props.title}</h2>
             <form>
                 <label>
-                    First Name: <input value={this.state.modifiableData._firstName} name="firstName" type="text" onChange={this.handleChange}/><br/>
+                    First Name: <input value={this.state.modifiableData._firstName} name="_firstName" type="text" onChange={this.handleChange}/><br/>
                 </label>
                 <label>
-                    Last Name: <input value={this.state.modifiableData._lastName}name="lastName" type="text" onChange={this.handleChange}/><br/>
+                    Last Name: <input value={this.state.modifiableData._lastName}name="_lastName" type="text" onChange={this.handleChange}/><br/>
                 </label>
                 <label>
-                    email: <input value={this.state.modifiableData._email} name="email" type="text" onChange={this.handleChange}/><br/>
+                    email: <input value={this.state.modifiableData._email} name="_email" type="text" onChange={this.handleChange}/><br/>
                 </label>
                 <label>
-                    slack handle: <input value={this.state.modifiableData._slackHandle} name="slackHandle" type="text" onChange={this.handleChange}/><br/>
+                    slack handle: <input value={this.state.modifiableData._slackHandle} name="_slackHandle" type="text" onChange={this.handleChange}/><br/>
                 </label>
             </form>
                 &nbsp;
