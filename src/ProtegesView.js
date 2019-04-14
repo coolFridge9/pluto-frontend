@@ -11,7 +11,7 @@ export default class ProtegesView extends Component {
         }
     }
     componentDidMount() {
-        this.timerID = setInterval(() => axios.get("http://localhost:5000").then(response => {
+        this.timerID = setInterval(() => axios.get("http://ec2-54-206-41-146.ap-southeast-2.compute.amazonaws.com:5000").then(response => {
                 this.setState({
                     tableContent: response.data,
                     isLoading: false

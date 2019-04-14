@@ -22,11 +22,11 @@ class App extends Component {
 
     onClickSwitchViewer = (view) => {this.switchViewer(view);};
     onClickSubmitAdd = (postData) => {
-      axios.post("http://localhost:5000/",postData);
+      axios.post("http://ec2-54-206-41-146.ap-southeast-2.compute.amazonaws.com:5000",postData);
       this.switchViewer("view");
     };
     onClickSubmitEdit = (postData) => {
-      axios.put("http://localhost:5000/",postData);
+      axios.put("http://ec2-54-206-41-146.ap-southeast-2.compute.amazonaws.com:5000",postData);
       this.switchViewer("view");
     };
 
